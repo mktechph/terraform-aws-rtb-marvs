@@ -16,11 +16,13 @@ variable "route_destination_cidr_block" {
 variable "route_internet_gateway_bool" {
   description = "Create route to Internet Gateway."
   type        = bool
+  default     = false
 }
 
 variable "route_internet_gateway" {
   description = "The Internet Gateway ID."
   type        = string
+  default     = null
 }
 
 
@@ -33,6 +35,7 @@ variable "route_nat_gateway_bool" {
 variable "route_nat_gateway" {
   description = "The NAT Gateway ID."
   type        = string
+  default     = null
 }
 
 variable "route_endpoint_bool" {
@@ -44,6 +47,7 @@ variable "route_endpoint_bool" {
 variable "route_endpoint" {
   description = "The VPC Endpoint ID."
   type        = string
+  default     = null
 }
 
 variable "route_peering_bool" {
@@ -55,4 +59,5 @@ variable "route_peering_bool" {
 variable "route_peering" {
   description = "The VPC Peering ID."
   type        = string
+  default     = null
 }
