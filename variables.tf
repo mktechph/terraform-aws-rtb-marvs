@@ -27,6 +27,7 @@ variable "route_internet_gateway" {
 variable "route_nat_gateway_bool" {
   description = "Create route to NAT Gateway."
   type        = bool
+  default     = false
 }
 
 variable "route_nat_gateway" {
@@ -37,6 +38,7 @@ variable "route_nat_gateway" {
 variable "route_endpoint_bool" {
   description = "Create route to VPC Endpoint."
   type        = bool
+  default     = false
 }
 
 variable "route_endpoint" {
@@ -47,6 +49,7 @@ variable "route_endpoint" {
 variable "route_peering_bool" {
   description = "Create route to VPC Peering."
   type        = bool
+  default     = false
 }
 
 variable "route_peering" {
