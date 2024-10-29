@@ -8,28 +8,28 @@ resource "aws_route_table" "rtb" {
 resource "aws_route" "route_internet_gateway" {
   count                  = var.route_internet_gateway_bool ? 1 : 0
   route_table_id         = aws_route_table.rtb.id
-  destination_cidr_block = var.route_destination_cidr_block
+  destination_cidr_block = var.route_internet_gateway_destination_cidr_block
   gateway_id             = var.route_internet_gateway
 }
 
 resource "aws_route" "route_nat_gateway" {
   count                  = var.route_nat_gateway_bool ? 1 : 0
   route_table_id         = aws_route_table.rtb.id
-  destination_cidr_block = var.route_destination_cidr_block
+  destination_cidr_block = var.route_nat_gateway_destination_cidr_block
   gateway_id             = var.route_nat_gateway
 }
 
 resource "aws_route" "route_endpoint" {
   count                  = var.route_endpoint_bool ? 1 : 0
   route_table_id         = aws_route_table.rtb.id
-  destination_cidr_block = var.route_destination_cidr_block
+  destination_cidr_block = var.route_endpoint_destination_cidr_block
   gateway_id             = var.route_endpoint
 }
 
 resource "aws_route" "route_peering" {
   count                  = var.route_peering_bool ? 1 : 0
   route_table_id         = aws_route_table.rtb.id
-  destination_cidr_block = var.route_destination_cidr_block
+  destination_cidr_block = var.route_vpc_peering_destination_cidr_block
   gateway_id             = var.route_peering
 }
 
