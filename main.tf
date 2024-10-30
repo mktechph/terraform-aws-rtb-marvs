@@ -23,7 +23,7 @@ resource "aws_route" "route_endpoint" {
   count                  = var.route_endpoint_bool ? 1 : 0
   route_table_id         = aws_route_table.rtb.id
   destination_cidr_block = var.route_endpoint_destination_cidr_block
-  gateway_id             = var.route_endpoint
+  vpc_endpoint_id        = var.route_endpoint
 }
 
 resource "aws_route" "route_peering" {
